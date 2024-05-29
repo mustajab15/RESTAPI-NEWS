@@ -14,6 +14,12 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         //
     })
+
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->alias([
+            'pemilik-postingan' => \App\Http\Middleware\PemilikPostingan::class
+        ]);
+    })
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();

@@ -19,8 +19,7 @@ class PostResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'news_content' => $this->news_content,
-            'created_at' => Carbon::parse($this->created_at)->format('Y-m-d')
-            
+            'created_at' => Carbon::parse($this->created_at)->format('Y-m-d')           
         ];
     }
 }

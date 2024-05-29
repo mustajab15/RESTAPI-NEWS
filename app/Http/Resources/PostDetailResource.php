@@ -22,7 +22,6 @@ class PostDetailResource extends JsonResource
             'author' => $this->author,
             'created_at' => Carbon::parse($this->created_at)->format('Y-m-d'),
             'writer' => $this->whenLoaded('writer')
-
         ];
     }
 }
