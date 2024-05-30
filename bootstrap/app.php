@@ -20,6 +20,12 @@ return Application::configure(basePath: dirname(__DIR__))
             'pemilik-postingan' => \App\Http\Middleware\PemilikPostingan::class
         ]);
     })
+
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->alias([
+            'pemilik-komentar' => \App\Http\Middleware\PemilikKomentar::class
+        ]);
+    })
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
